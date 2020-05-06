@@ -1,0 +1,39 @@
+.Menu {
+  background-color: #5383e8;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  border-bottom: 1px solid #4171d6;
+}
+
+.nerfgg-menu {
+  list-style-type: none;
+  margin: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #cdcdcd;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nerfgg-menu-item-active a {
+  color: #ffffff;
+  font-weight: 700;
+  height: 47px;
+  border-bottom: 4px solid #ffffff;
+}
+
+.nerfgg-menu-item a:hover {
+  color: #ffffff;
+  font-weight: 700;
+  height: 47px;
+  border-bottom: 4px solid #ffffff;
+}

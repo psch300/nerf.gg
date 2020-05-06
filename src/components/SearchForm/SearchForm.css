@@ -1,0 +1,8 @@
+.searchform-text {
+  font-size: small;
+  padding: 15px;
+}
+
+.searchform-text:focus {
+  outline: none;
+}

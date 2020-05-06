@@ -1,0 +1,24 @@
+.Header {
+  display: flex;
+}
+
+.nerfgg-header-logo {
+  color: #ffffff;
+  background-color: #5383e8;
+  font-size: x-large;
+  float: left;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+}
+
+.nerfgg-nav {
+  color: #808080;
+  background-color: #232f46;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  font-size: small;
+  flex-grow: 1;
+  padding-left: 10px;
+}
