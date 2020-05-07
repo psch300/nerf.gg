@@ -1,11 +1,12 @@
 import React from 'react';
-import { MainWrapper, Logo, SearchForm } from '../../components';
+import { MainWrapper, Logo, SearchForm, Advertisement } from '../../components';
 
 const MainContainer = () => {
   return (
     <MainWrapper>
       <Logo />
       <SearchForm />
+      <Advertisement />
     </MainWrapper>
   )
 }
