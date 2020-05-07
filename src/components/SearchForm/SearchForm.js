@@ -5,7 +5,7 @@ const SearchForm = () => {
   return (
     <form className="SearchForm">
       <input className="searchform-text" type="text" placeholder="소환사명을 입력하세요." />
-      <button className="searchform-button" type="submit">검색</button>
+      <button className="searchform-button" type="submit">GO</button>
     </form>
   )
 }

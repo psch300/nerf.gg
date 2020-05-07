@@ -1,8 +1,28 @@
+.SearchForm {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+}
+
 .searchform-text {
-  font-size: small;
-  padding: 15px;
+  font-size: 15px;
+  padding: 15px 150px 15px 15px;
+  width: 435px;
+  border: none;
 }
 
 .searchform-text:focus {
   outline: none;
+}
+
+.searchform-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #00b2ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  font-size: large;
+  font-weight: 900;
 }

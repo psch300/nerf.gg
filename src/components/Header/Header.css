@@ -2,10 +2,12 @@
   display: flex;
 }
 
-.nerfgg-header-logo {
+.nerfgg-header-logo a {
+  text-decoration: none;
   color: #ffffff;
   background-color: #5383e8;
-  font-size: x-large;
+  font-size: large;
+  font-weight: 900;
   float: left;
   height: 40px;
   padding: 0 10px;
