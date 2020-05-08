@@ -24,7 +24,7 @@ li a {
   font-weight: 600;
 }
 
-.nerfgg-menu-item-active a {
+.nerfgg-menu-item .active{
   color: #ffffff;
   font-weight: 700;
   height: 47px;
