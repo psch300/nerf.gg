@@ -26,3 +26,18 @@
   font-size: large;
   font-weight: 900;
 }
+
+@media (max-width: 768px) {
+  .SearchForm {
+    width: 80%;
+  }
+
+  .searchform-text {
+    padding: 15px 0px 15px 15px;
+    width: 100%;
+  }
+
+  .searchform-button {
+    right: 0px;
+  }
+}
