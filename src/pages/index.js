@@ -1,11 +1,11 @@
-import Home from './Home';
-import Analysis from './Analysis';
-import Statistics from './Statistics';
-import Summoner from './Summoner';
+import MainContainer from './MainContainer';
+import AnalysisContainer from './AnalysisContainer';
+import StatisticsContainer from './StatisticsContainer';
+import SummonerContainer from './SummonerContainer';
 
 export {
-  Home,
-  Analysis,
-  Statistics,
-  Summoner,
+  MainContainer,
+  AnalysisContainer,
+  StatisticsContainer,
+  SummonerContainer,
 }

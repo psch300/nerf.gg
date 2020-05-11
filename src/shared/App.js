@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Home, Analysis, Statistics, Summoner } from 'pages';
+import { MainContainer, AnalysisContainer, StatisticsContainer, SummonerContainer } from 'pages';
 import { Header, Menu, Footer } from 'components';
 
 function App() {
@@ -8,10 +8,10 @@ function App() {
     <div>
       <Header />
       <Menu />
-      <Route exact path="/" component={Home} />
-      <Route path="/analysis" component={Analysis} />
-      <Route path="/statistics" component={Statistics} />
-      <Route path="/summoner" component={Summoner} />
+      <Route exact path="/" component={MainContainer} />
+      <Route path="/analysis" component={AnalysisContainer} />
+      <Route path="/statistics" component={StatisticsContainer} />
+      <Route path="/summoner" component={SummonerContainer} />
       <Footer />
     </div>
   );
