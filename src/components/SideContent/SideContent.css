@@ -1,0 +1,19 @@
+.tierBox {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border: 1px solid grey;
+  width: 250px;
+  height: 80px;
+  padding: 10px;
+}
+
+.tierImage {
+  width: 80px;
+}
+
+.tierInformation {
+  font-size: small;
+  display: inline;
+  vertical-align: middle;
+}
