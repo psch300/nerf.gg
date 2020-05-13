@@ -1,8 +1,8 @@
 import React from 'react';
 import './SideContent.css';
 
-const SideContent = ({leagueData}) => {
-
+const SideContent = ({soloLeague}) => {
+  const { tier, rank, leaguePoints, wins, losses } = soloLeague;
   const getRankNumber = (rank) => {
     if (rank === "I") {
       return 1;
@@ -17,22 +17,22 @@ const SideContent = ({leagueData}) => {
     }
   }
 
-  const tierImageUrl = `//opgg-static.akamaized.net/images/medals/${leagueData[0].tier}_${getRankNumber(leagueData[0].rank)}.png?image=q_auto&v=1`;
+  const tierImageUrl = `//opgg-static.akamaized.net/images/medals/${tier}_${getRankNumber(rank)}.png?image=q_auto&v=1`;
 
   return (
     <div className="SideContent">
-      <div className="soloTierBox">
+      <div className="tierBox">
         <img className="tierImage" src={tierImageUrl} alt="tier"/>
         <div className="tierInformation">
-          <b>{leagueData[0].tier} {leagueData[0].rank}</b><br />
-          <b>{leagueData[0].leaguePoints}LP</b> / {leagueData[0].wins}승 {leagueData[0].losses}패
+          <b>{tier} {rank}</b><br />
+          <b>{leaguePoints}LP</b> / {wins}승 {losses}패
         </div>
       </div>
-      <div className="flexTierBox">
+      <div className="tierBox">
         <img className="tierImage" src={tierImageUrl} alt="tier"/>
         <div className="tierInformation">
-          <b>{leagueData[0].tier} {leagueData[0].rank}</b><br />
-          <b>{leagueData[0].leaguePoints}LP</b> / {leagueData[0].wins}승 {leagueData[0].losses}패
+          <b>{tier} {rank}</b><br />
+          <b>{leaguePoints}LP</b> / {wins}승 {losses}패
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 .RealContent {
   background-color: #0f0f0f;
   flex-grow: 1;
+  margin-bottom: 8px;
 }
