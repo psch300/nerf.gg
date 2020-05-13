@@ -7,7 +7,7 @@ import { Content } from '../components';
 const SummonerContainer = ({location}) => {
 
   const [ summoner, setSummoner ] = useState({});
-  const [ soloLeague, setSoloLeague ] = useState({})
+  const [ leagueData, setLeagueData ] = useState([]);
 
   useEffect(() => {
     const query = queryString.parse(location.search);
@@ -18,9 +18,7 @@ const SummonerContainer = ({location}) => {
     const summonerSummary = await server.getSummonerSummary(userName);
     const leagueInformation = await server.getLeagueInformation(summonerSummary.data.id);
     setSummoner(summonerSummary.data);
-    setSoloLeague(leagueInformation.data[0]);
-
-    console.log(leagueInformation.data[0]);
+    setLeagueData(leagueInformation.data);
   }
 
   return (
@@ -31,7 +29,7 @@ const SummonerContainer = ({location}) => {
         summonerLevel={summoner.summonerLevel}
       />
       <Content
-        soloLeague={soloLeague}
+        leagueData={leagueData}
       />
     </Wrapper>
   )

@@ -3,11 +3,12 @@ import SideContent from '../SideContent/SideContent';
 import RealContent from '../RealContent/RealContent';
 import './Content.css';
 
-const Content = ({soloLeague}) => {
+const Content = ({leagueData}) => {
+
   return (
     <div className="Content">
-      <SideContent soloLeague={soloLeague} />
-      <RealContent />
+      <SideContent className="SideContent" leagueData={leagueData} />
+      <RealContent className="RealContent" />
     </div>
   )
 }
