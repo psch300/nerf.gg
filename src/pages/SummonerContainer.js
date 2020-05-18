@@ -7,7 +7,8 @@ import { Content } from '../components';
 const SummonerContainer = ({location}) => {
 
   const [ summoner, setSummoner ] = useState({});
-  const [ soloLeague, setSoloLeague ] = useState({})
+  const [ soloLeague, setSoloLeague ] = useState({ queueType: "RANKED_SOLO_5x5 "});
+  const [ teamLeague, setTeamLeague ] = useState({ queueType: "RANKED_FLEX_SR "});
 
   useEffect(() => {
     const query = queryString.parse(location.search);
@@ -17,8 +18,15 @@ const SummonerContainer = ({location}) => {
   const fetchSummonerSummary = async (userName) => {
     const summonerSummary = await server.getSummonerSummary(userName);
     const leagueInformation = await server.getLeagueInformation(summonerSummary.data.id);
+    
     setSummoner(summonerSummary.data);
-    setSoloLeague(leagueInformation.data[0]);
+    leagueInformation.data.forEach(leagueData => {
+      if (leagueData.queueType === "RANKED_SOLO_5x5") {
+        setSoloLeague(leagueData);
+      } else if (leagueData.queueType === "RANKED_FLEX_SR") {
+        setTeamLeague(leagueData);
+      }
+    });
   }
 
   return (
@@ -30,6 +38,7 @@ const SummonerContainer = ({location}) => {
       />
       <Content
         soloLeague={soloLeague}
+        teamLeague={teamLeague}
       />
     </Wrapper>
   )

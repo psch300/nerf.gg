@@ -1,20 +1,4 @@
-.tierBox {
-  display: flex;
-  flex-direction: row;
-  background-color: #ffffff;
-  border: 1px solid grey;
+.SideContent {
   width: 250px;
-  height: 80px;
-  padding: 10px;
-  margin-bottom: 8px;
-}
-
-.tierImage {
-  width: 80px;
-}
-
-.tierInformation {
-  font-size: small;
-  display: inline;
-  vertical-align: middle;
+  margin-right: 8px;
 }

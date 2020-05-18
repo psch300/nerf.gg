@@ -1,0 +1,24 @@
+.TierBox {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border: 1px solid #b2b2b2;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.tierImage {
+  width: 80px;
+  margin-right: 8px;
+}
+
+.tierInformation {
+  font-size: small;
+  display: inline;
+  vertical-align: middle;
+}
+
+.queueType {
+  font-size: smaller;
+}

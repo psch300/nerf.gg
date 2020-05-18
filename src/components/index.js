@@ -10,6 +10,7 @@ import Summary from './Summary/Summary.js';
 import Content from './Content/Content.js';
 import SideContent from './SideContent/SideContent.js';
 import RealContent from './RealContent/RealContent.js';
+import TierBox from './TierBox/TierBox.js';
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   Content,
   SideContent,
   RealContent,
+  TierBox,
 };
