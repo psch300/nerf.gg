@@ -11,6 +11,9 @@ import Content from './Content/Content.js';
 import SideContent from './SideContent/SideContent.js';
 import RealContent from './RealContent/RealContent.js';
 import TierBox from './TierBox/TierBox.js';
+import GameSummary from './GameSummary/GameSummary.js';
+import GameItemList from './GameItemList/GameItemList.js';
+import GameItem from './GameItem/GameItem.js';
 
 export {
   Header,
@@ -26,4 +29,7 @@ export {
   SideContent,
   RealContent,
   TierBox,
+  GameSummary,
+  GameItemList,
+  GameItem,
 };

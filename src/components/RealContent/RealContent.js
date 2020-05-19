@@ -1,10 +1,13 @@
 import React from 'react';
 import './RealContent.css';
+import { GameSummary } from '..';
+import GameItemList from '../GameItemList/GameItemList';
 
-const RealContent = () => {
+const RealContent = ({matchLists}) => {
   return (
     <div className="RealContent">
-      RealContent
+      <GameSummary />
+      <GameItemList matchLists={matchLists} />
     </div>
   )
 }

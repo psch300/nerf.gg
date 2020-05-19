@@ -1,0 +1,6 @@
+.GameItem {
+  height: 100px;
+  border: 1px solid #b2b2b2;
+  margin-top: 8px;
+  background-color: white;
+}

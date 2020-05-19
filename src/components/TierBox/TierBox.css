@@ -3,13 +3,13 @@
   flex-direction: row;
   background-color: #ffffff;
   border: 1px solid #b2b2b2;
-  height: 80px;
+  height: 100px;
   padding: 10px;
   margin-bottom: 8px;
 }
 
 .tierImage {
-  width: 80px;
+  width: 100px;
   margin-right: 8px;
 }
 
