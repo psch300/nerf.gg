@@ -9,7 +9,8 @@ const SummonerContainer = ({location}) => {
   const [ summoner, setSummoner ] = useState({});
   const [ soloLeague, setSoloLeague ] = useState({ queueType: "RANKED_SOLO_5x5 "});
   const [ teamLeague, setTeamLeague ] = useState({ queueType: "RANKED_FLEX_SR "});
-  const [ matchLists, setMatchLists ] = useState([]);
+  const [ matchList, setMatchList ] = useState([]);
+  const [ matchDetailList, setMatchDetailList ] = useState([]);
 
   useEffect(() => {
     const query = queryString.parse(location.search);
@@ -17,8 +18,12 @@ const SummonerContainer = ({location}) => {
   }, [location]);
 
   useEffect(() => {
-    fetchSummonerMatchLists(summoner.accountId);
+    fetchMatchList(summoner.accountId);
   }, [summoner]);
+
+  useEffect(() => {
+    fetchMatchDetailList(matchList);
+  }, [matchList]);
 
   const fetchSummonerSummary = async (userName) => {
     const summonerSummary = await server.getSummonerSummary(userName);
@@ -34,9 +39,19 @@ const SummonerContainer = ({location}) => {
     });
   }
 
-  const fetchSummonerMatchLists = async (userId) => {
-    const matchLists = await server.getMatchListsInformation(userId);
-    setMatchLists(matchLists.data.matches);
+  const fetchMatchList = async (userId) => {
+    const matchList = await server.getMatchLists(userId);
+    setMatchList(matchList.data.matches); 
+  }
+
+  const fetchMatchDetailList = async (matchList) => {
+    const matchDetailList = await Promise.all(
+      matchList.map(match => {
+        return server.getMatchDetailInformation(match.gameId);
+      })
+    );
+
+    setMatchDetailList(matchDetailList.map((matchDetail) => (matchDetail.data)));
   }
 
   return (
@@ -49,7 +64,7 @@ const SummonerContainer = ({location}) => {
       <Content
         soloLeague={soloLeague}
         teamLeague={teamLeague}
-        matchLists={matchLists}
+        matchDetailList={matchDetailList}
       />
     </Wrapper>
   )

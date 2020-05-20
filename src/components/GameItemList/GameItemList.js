@@ -2,9 +2,9 @@ import React from 'react';
 import './GameItemList.css';
 import { GameItem } from '..';
 
-const GameItemList = ({matchLists}) => {
+const GameItemList = ({matchDetailList}) => {
 
-  const gameList = matchLists.map((match, index) => (
+  const gameList = matchDetailList.map((matchDetail, index) => (
     <GameItem key={index} />
   ));
 

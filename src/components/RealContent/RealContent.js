@@ -3,11 +3,12 @@ import './RealContent.css';
 import { GameSummary } from '..';
 import GameItemList from '../GameItemList/GameItemList';
 
-const RealContent = ({matchLists}) => {
+const RealContent = ({matchDetailList}) => {
+
   return (
     <div className="RealContent">
       <GameSummary />
-      <GameItemList matchLists={matchLists} />
+      <GameItemList matchDetailList={matchDetailList} />
     </div>
   )
 }
