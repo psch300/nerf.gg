@@ -15,6 +15,7 @@ const SummonerContainer = ({location}) => {
   useEffect(() => {
     const query = queryString.parse(location.search);
     fetchSummonerSummary(query.userName);
+    document.title = `${query.userName} - 게임 전적`;
   }, [location]);
 
   useEffect(() => {
@@ -41,7 +42,9 @@ const SummonerContainer = ({location}) => {
 
   const fetchMatchList = async (userId) => {
     const matchList = await server.getMatchLists(userId);
-    setMatchList(matchList.data.matches); 
+    setMatchList(matchList.data.matches);
+
+    // console.log(matchList.data);
   }
 
   const fetchMatchDetailList = async (matchList) => {
@@ -57,11 +60,12 @@ const SummonerContainer = ({location}) => {
   return (
     <Wrapper>
       <Summary
-        name={summoner.name}
+        summonerName={summoner.name}
         profileIconId={summoner.profileIconId}
         summonerLevel={summoner.summonerLevel}
       />
       <Content
+        summonerAccountId={summoner.accountId}
         soloLeague={soloLeague}
         teamLeague={teamLeague}
         matchDetailList={matchDetailList}

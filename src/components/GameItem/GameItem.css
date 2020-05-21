@@ -1,6 +1,71 @@
 .GameItem {
   height: 100px;
-  border: 1px solid #b2b2b2;
   margin-top: 8px;
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  color: #1f1f1f;
+}
+
+.GameItem.Win {
+  border: 1px solid #99b9cf;
+  background-color: #a3cfec;
+}
+
+.GameItem.Fail {
+  border: 1px solid #cea7a7;
+  background-color: #e2b6b3;
+}
+
+.GameStats {
+  text-align: center;
+  font-size: 11px;
+  width: 6em;
+  margin: auto 0;
+}
+
+.GameStats .GameType {
+  font-weight: 700;
+}
+
+.GameResult.Win {
+  font-weight: 700;
+  color: #1a78ae;
+}
+
+.GameResult.Fail {
+  font-weight: 700;
+  color: #c6443e;
+}
+
+.GameStats .Bar {
+  width: 2em;
+  border: 0.5px solid gray;
+}
+
+.GameSettingInfo {
+  text-align: center;
+  font-size: small;
+  width: 8em;
+  margin: auto 0;
+}
+
+.GameSettingInfo .ChampionImg {
+  width: 4em;
+  border-radius: 2em;
+}
+
+.KDAScore {
+  width: 6em;
+  margin: auto 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.KDAScore .KDA {
+  font-size: medium;
+  margin-bottom: 8px;
+}
+
+.KDAScore .KDARatio {
+  font-size: 11px;
 }
