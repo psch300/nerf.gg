@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: row;
   color: #1f1f1f;
+  font-size: 11px;
 }
 
 .GameItem.Win {
@@ -18,7 +19,6 @@
 
 .GameStats {
   text-align: center;
-  font-size: 11px;
   width: 6em;
   margin: auto 0;
 }
@@ -44,7 +44,6 @@
 
 .GameSettingInfo {
   text-align: center;
-  font-size: small;
   width: 8em;
   margin: auto 0;
 }
@@ -55,17 +54,28 @@
 }
 
 .KDAScore {
-  width: 6em;
+  width: 10em;
   margin: auto 0;
   text-align: center;
   font-weight: 700;
 }
 
 .KDAScore .KDA {
-  font-size: medium;
+  font-size: 15px;
   margin-bottom: 8px;
 }
 
-.KDAScore .KDARatio {
-  font-size: 11px;
+.Stats {
+  text-align: center;
+  width: 8em;
+  margin: auto 0;
+}
+
+.Stats .CS {
+  margin: 4px 0;
+}
+
+.Stats .PKRate {
+  font-weight: 700;
+  color: #c6443e;
 }

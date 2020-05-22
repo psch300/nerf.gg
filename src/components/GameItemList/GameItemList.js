@@ -151,12 +151,15 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     const targetSummoner = matchDetail.participants.find(participant => participant.participantId === participantId);
     const summonerTeamId = targetSummoner.teamId;
 
-    const gameType = matchDetail.queueId === 420 ? '솔랭' : '자유 5:5 랭크';
+    const gameType = matchDetail.queueId === 400 ? '자유 5:5 랭크' : matchDetail.queueId === 420 ? '솔랭' : '일반';
     const gameResult = matchDetail.teams.find(team => team.teamId === summonerTeamId).win === 'Win' ? '승리' : '패배';
     const gameLength = Math.floor(matchDetail.gameDuration/60).toString() + '분 ' + Math.floor(matchDetail.gameDuration%60).toString() + '초';
     const championName = getChampionName(targetSummoner.championId);
     const kda = targetSummoner.stats.kills.toString() + ' / ' + targetSummoner.stats.deaths.toString() + ' / ' + targetSummoner.stats.assists.toString();
     const kdaRatio = ((targetSummoner.stats.kills + targetSummoner.stats.assists) / targetSummoner.stats.deaths).toFixed(2) + ':1 평점';
+    const level = '레벨 ' + targetSummoner.stats.champLevel.toString();
+    const creepScore = (targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled).toString() + ' (' + ((targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled)/(matchDetail.gameDuration/60)).toFixed(1) + ') CS';
+    const pkRate = '킬관여 ' + ((targetSummoner.stats.kills + targetSummoner.stats.assists) / (matchDetail.participants.filter(participant => participant.teamId === summonerTeamId).reduce((acc, cur) => acc + cur.stats.kills, 0)) * 100).toFixed(0) + '%';
 
     return (
       <GameItem
@@ -167,6 +170,9 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
         championName={championName}
         kda={kda}
         kdaRatio={kdaRatio}
+        level={level}
+        creepScore={creepScore}
+        pkRate={pkRate}
       />
     );
   });
