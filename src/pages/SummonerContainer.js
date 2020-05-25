@@ -43,8 +43,6 @@ const SummonerContainer = ({location}) => {
   const fetchMatchList = async (userId) => {
     const matchList = await server.getMatchLists(userId);
     setMatchList(matchList.data.matches);
-
-    // console.log(matchList.data);
   }
 
   const fetchMatchDetailList = async (matchList) => {

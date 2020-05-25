@@ -13,7 +13,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 23: return "Tryndamere"; 
       case 79: return "Gragas"; 
       case 69: return "Cassiopeia"; 
-      case 136: return "Aurelion Sol"; 
+      case 136: return "AurelionSol"; 
       case 13: return "Ryze"; 
       case 78: return "Poppy"; 
       case 14: return "Sion"; 
@@ -39,7 +39,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 68: return "Rumble"; 
       case 82: return "Mordekaiser"; 
       case 37: return "Sona"; 
-      case 96: return "Kog'Maw"; 
+      case 96: return "KogMaw"; 
       case 55: return "Katarina"; 
       case 117: return "Lulu"; 
       case 22: return "Ashe"; 
@@ -54,7 +54,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 134: return "Syndra"; 
       case 80: return "Pantheon"; 
       case 92: return "Riven"; 
-      case 121: return "Kha'Zix"; 
+      case 121: return "KhaZix"; 
       case 42: return "Corki"; 
       case 268: return "Azir"; 
       case 51: return "Caitlyn"; 
@@ -69,24 +69,24 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 254: return "Vi"; 
       case 10: return "Kayle"; 
       case 39: return "Irelia"; 
-      case 64: return "Lee Sin"; 
+      case 64: return "LeeSin"; 
       case 420: return "Illaoi"; 
       case 60: return "Elise"; 
       case 106: return "Volibear"; 
       case 20: return "Nunu"; 
-      case 4: return "Twisted Fate"; 
+      case 4: return "TwistedFate"; 
       case 24: return "Jax"; 
       case 102: return "Shyvana"; 
       case 429: return "Kalista"; 
-      case 36: return "Dr. Mundo"; 
+      case 36: return "DrMundo"; 
       case 427: return "Ivern"; 
       case 131: return "Diana"; 
-      case 223: return "Tahm Kench"; 
+      case 223: return "TahmKench"; 
       case 63: return "Brand"; 
       case 113: return "Sejuani"; 
       case 8: return "Vladimir"; 
       case 154: return "Zac"; 
-      case 421: return "Rek'Sai"; 
+      case 421: return "RekSai"; 
       case 133: return "Quinn"; 
       case 84: return "Akali"; 
       case 163: return "Taliyah"; 
@@ -113,7 +113,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 61: return "Orianna"; 
       case 114: return "Fiora"; 
       case 9: return "Fiddlesticks"; 
-      case 31: return "Cho'Gath"; 
+      case 31: return "ChoGath"; 
       case 33: return "Rammus"; 
       case 7: return "LeBlanc"; 
       case 16: return "Soraka"; 
@@ -123,26 +123,51 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 83: return "Yorick"; 
       case 6: return "Urgot"; 
       case 203: return "Kindred"; 
-      case 21: return "Miss Fortune"; 
+      case 21: return "MissFortune"; 
       case 62: return "Wukong"; 
       case 53: return "Blitzcrank"; 
       case 98: return "Shen"; 
       case 201: return "Braum"; 
-      case 5: return "Xin Zhao"; 
+      case 5: return "XinZhao"; 
       case 29: return "Twitch"; 
-      case 11: return "Master Yi"; 
+      case 11: return "MasterYi"; 
       case 44: return "Taric"; 
       case 32: return "Amumu"; 
       case 41: return "Gangplank"; 
       case 48: return "Trundle"; 
       case 38: return "Kassadin"; 
-      case 161: return "Vel'Koz"; 
+      case 161: return "Velkoz"; 
       case 143: return "Zyra"; 
       case 267: return "Nami"; 
-      case 59: return "Jarvan IV"; 
-      case 81: return "Ezreal"; 
+      case 59: return "JarvanIV"; 
+      case 81: return "Ezreal";
+      case 164: return "Camille";
+      case 498: return "Xayah";
+      case 497: return "Racan";
+      case 141: return "Kayn";
+      case 516: return "Ornn";
+      case 142: return "Zoe";
+      case 145: return "Kaisa";
+      case 555: return "Pyke";
+      case 518: return "Neeko";
+      case 517: return "Sylas";
+      case 350: return "Yuumi";
+      case 246: return "Qiyana";
+      case 235: return "Senna";
+      case 523: return "Aphelios";
+      case 875: return "Sett";
       default: return "";
     }
+  }
+
+  const getItemIds = (stats) => {
+    let result = [];
+    for (let i=0; i<7; i++) {
+      let key = "item";
+      result.push(stats[key+i.toString()]);
+    }
+
+    return result;
   }
 
   const gameList = matchDetailList.map((matchDetail, index) => {
@@ -160,6 +185,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     const level = '레벨 ' + targetSummoner.stats.champLevel.toString();
     const creepScore = (targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled).toString() + ' (' + ((targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled)/(matchDetail.gameDuration/60)).toFixed(1) + ') CS';
     const pkRate = '킬관여 ' + ((targetSummoner.stats.kills + targetSummoner.stats.assists) / (matchDetail.participants.filter(participant => participant.teamId === summonerTeamId).reduce((acc, cur) => acc + cur.stats.kills, 0)) * 100).toFixed(0) + '%';
+    const itemIds = getItemIds(targetSummoner.stats);
 
     return (
       <GameItem
@@ -173,6 +199,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
         level={level}
         creepScore={creepScore}
         pkRate={pkRate}
+        itemIds={itemIds}
       />
     );
   });

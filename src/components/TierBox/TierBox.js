@@ -30,7 +30,8 @@ const TierBox = ({league}) => {
         { tier !== undefined ? (
           <div>
             <b>{tier} {rank}</b><br />
-            <b>{leaguePoints}LP</b> / {wins}승 {losses}패
+            <b>{leaguePoints}LP</b> / {wins}승 {losses}패<br />
+            <span>승률 {(wins/(wins + losses)*100).toFixed(0)}%</span>
           </div>
         ) : (
           <div>

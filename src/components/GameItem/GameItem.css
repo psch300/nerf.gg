@@ -54,7 +54,7 @@
 }
 
 .KDAScore {
-  width: 10em;
+  width: 8em;
   margin: auto 0;
   text-align: center;
   font-weight: 700;
@@ -78,4 +78,17 @@
 .Stats .PKRate {
   font-weight: 700;
   color: #c6443e;
+}
+
+.Items {
+  margin: auto 0;
+  width: 12em;
+}
+
+.Items table {
+  margin: 0 auto;
+}
+
+.Items table img {
+  width: 2em;
 }

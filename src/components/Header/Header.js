@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="nerfgg-header-logo">
-        <Link exact to="/">NERG.GG</Link>
+        <Link to="/">NERG.GG</Link>
       </div>
       <div className="nerfgg-nav">League of Legends</div>
     </div>
