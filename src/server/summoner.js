@@ -9,7 +9,7 @@ export function getLeagueInformation(summonerId) {
 }
 
 export function getMatchLists(summonerId) {
-  return axios.get(`/lol/match/v4/matchlists/by-account/${summonerId}?endIndex=3&api_key=${process.env.REACT_APP_API_KEY}`);
+  return axios.get(`/lol/match/v4/matchlists/by-account/${summonerId}?endIndex=5&api_key=${process.env.REACT_APP_API_KEY}`);
 }
 
 export function getMatchDetailInformation(matchId) {

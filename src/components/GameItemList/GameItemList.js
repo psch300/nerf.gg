@@ -124,7 +124,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 6: return "Urgot"; 
       case 203: return "Kindred"; 
       case 21: return "MissFortune"; 
-      case 62: return "Wukong"; 
+      case 62: return "MonkeyKing"; 
       case 53: return "Blitzcrank"; 
       case 98: return "Shen"; 
       case 201: return "Braum"; 
@@ -186,6 +186,11 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     const creepScore = (targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled).toString() + ' (' + ((targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled)/(matchDetail.gameDuration/60)).toFixed(1) + ') CS';
     const pkRate = '킬관여 ' + ((targetSummoner.stats.kills + targetSummoner.stats.assists) / (matchDetail.participants.filter(participant => participant.teamId === summonerTeamId).reduce((acc, cur) => acc + cur.stats.kills, 0)) * 100).toFixed(0) + '%';
     const itemIds = getItemIds(targetSummoner.stats);
+    const participantsList = matchDetail.participantIdentities.map(participantIdentity => ({
+      participantId: participantIdentity.participantId,
+      summonerName: participantIdentity.player.summonerName,
+      championName: getChampionName(matchDetail.participants.find(participant => participant.participantId === participantIdentity.participantId).championId)
+    }));
 
     return (
       <GameItem
@@ -200,6 +205,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
         creepScore={creepScore}
         pkRate={pkRate}
         itemIds={itemIds}
+        participantsList={participantsList}
       />
     );
   });

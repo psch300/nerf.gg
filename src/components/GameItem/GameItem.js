@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameItem.css';
 
-const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio, level, creepScore, pkRate, itemIds}) => {
+const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio, level, creepScore, pkRate, itemIds, participantsList}) => {
 
   const className = gameResult === "승리" ? "GameItem Win" : "GameItem Fail";
   const gameResultClassName = gameResult === "승리" ? "GameResult Win" : "GameResult Fail";
@@ -11,6 +11,17 @@ const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio
   
     return (
       <td key={index}><img src={itemImgUrl} alt={item}/></td>
+    );
+  });
+  const players = participantsList.map((participant, index) => {
+    const playerSearchUrl = `/summoner?userName=${participant.summonerName}`;
+    const playerImgUrl = `http://ddragon.leagueoflegends.com/cdn/10.10.3216176/img/champion/${participant.championName}.png`;
+
+    return (
+      <li key={index}>
+        <img src={playerImgUrl} alt={participant.championName}/>&nbsp;
+        <a href={playerSearchUrl} target="_blank" rel="noopener noreferrer">{participant.summonerName}</a>
+      </li>
     );
   });
 
@@ -49,6 +60,16 @@ const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio
             </tr>
           </tbody>
         </table>
+      </div>
+      <div className="Players Blue">
+        <ul>
+          {players.slice(0, 5)}
+        </ul>
+      </div>
+      <div className="Players Red">
+        <ul>
+          {players.slice(5, 10)}
+        </ul>
       </div>
     </div>
   )

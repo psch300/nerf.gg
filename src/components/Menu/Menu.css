@@ -11,11 +11,11 @@
   margin: 0;
 }
 
-li {
+.Menu li {
   float: left;
 }
 
-li a {
+.Menu li a {
   display: block;
   color: #cdcdcd;
   text-align: center;
@@ -24,14 +24,14 @@ li a {
   font-weight: 600;
 }
 
-.nerfgg-menu-item .active{
+.Menu .nerfgg-menu-item .active{
   color: #ffffff;
   font-weight: 700;
   height: 47px;
   border-bottom: 4px solid #ffffff;
 }
 
-.nerfgg-menu-item a:hover {
+.Menu .nerfgg-menu-item a:hover {
   color: #ffffff;
   font-weight: 700;
   height: 47px;
