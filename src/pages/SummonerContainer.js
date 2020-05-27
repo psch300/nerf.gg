@@ -29,7 +29,7 @@ const SummonerContainer = ({location}) => {
   const fetchSummonerSummary = async (userName) => {
     const summonerSummary = await server.getSummonerSummary(userName);
     const leagueInformation = await server.getLeagueInformation(summonerSummary.data.id);
-    
+
     setSummoner(summonerSummary.data);
     leagueInformation.data.forEach(leagueData => {
       if (leagueData.queueType === "RANKED_SOLO_5x5") {

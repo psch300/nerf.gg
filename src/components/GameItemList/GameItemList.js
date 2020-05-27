@@ -6,8 +6,6 @@ import { GameItem } from '..';
 
 const GameItemList = ({summonerAccountId, matchDetailList}) => {
 
-  console.log(matchDetailList);
-
   const getChampionName = (championId) => {
     switch (championId) {
       case 266: return "Aatrox"; 
@@ -56,7 +54,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 134: return "Syndra"; 
       case 80: return "Pantheon"; 
       case 92: return "Riven"; 
-      case 121: return "KhaZix"; 
+      case 121: return "Khazix"; 
       case 42: return "Corki"; 
       case 268: return "Azir"; 
       case 51: return "Caitlyn"; 
