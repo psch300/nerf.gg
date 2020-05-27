@@ -179,7 +179,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     const summonerTeamId = targetSummoner.teamId;
 
     const gameType = matchDetail.queueId === 400 ? '자유 5:5 랭크' : matchDetail.queueId === 420 ? '솔랭' : '일반';
-    const timeStamp = moment(matchDetail.gameCreation + matchDetail.gameDuration).locale('ko', localization).fromNow();
+    const timeStamp = moment(matchDetail.gameCreation + matchDetail.gameDuration*1000).locale('ko', localization).fromNow();
     const gameResult = matchDetail.teams.find(team => team.teamId === summonerTeamId).win === 'Win' ? '승리' : '패배';
     const gameLength = Math.floor(matchDetail.gameDuration/60).toString() + '분 ' + Math.floor(matchDetail.gameDuration%60).toString() + '초';
     const championName = getChampionName(targetSummoner.championId);
