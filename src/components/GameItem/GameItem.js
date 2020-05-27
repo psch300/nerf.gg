@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameItem.css';
 
-const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio, level, creepScore, pkRate, itemIds, participantsList}) => {
+const GameItem = ({gameType, timeStamp, gameResult, gameLength, championName, kda, kdaRatio, level, creepScore, pkRate, itemIds, participantsList}) => {
 
   const className = gameResult === "승리" ? "GameItem Win" : "GameItem Fail";
   const gameResultClassName = gameResult === "승리" ? "GameResult Win" : "GameResult Fail";
@@ -29,6 +29,7 @@ const GameItem = ({gameType, gameResult, gameLength, championName, kda, kdaRatio
     <div className={className}>
       <div className="GameStats">
         <div className="GameType">{gameType}</div>
+        <div className="TimeStamp">{timeStamp}</div>
         <hr className="Bar" />
         <div className={gameResultClassName}>{gameResult}</div>
         <div className="GameLength">{gameLength}</div>

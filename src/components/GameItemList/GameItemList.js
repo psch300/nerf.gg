@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+import localization from 'moment/locale/ko'
 import './GameItemList.css';
 import { GameItem } from '..';
 
@@ -177,11 +179,12 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     const summonerTeamId = targetSummoner.teamId;
 
     const gameType = matchDetail.queueId === 400 ? '자유 5:5 랭크' : matchDetail.queueId === 420 ? '솔랭' : '일반';
+    const timeStamp = moment(matchDetail.gameCreation + matchDetail.gameDuration).locale('ko', localization).fromNow();
     const gameResult = matchDetail.teams.find(team => team.teamId === summonerTeamId).win === 'Win' ? '승리' : '패배';
     const gameLength = Math.floor(matchDetail.gameDuration/60).toString() + '분 ' + Math.floor(matchDetail.gameDuration%60).toString() + '초';
     const championName = getChampionName(targetSummoner.championId);
     const kda = targetSummoner.stats.kills.toString() + ' / ' + targetSummoner.stats.deaths.toString() + ' / ' + targetSummoner.stats.assists.toString();
-    const kdaRatio = ((targetSummoner.stats.kills + targetSummoner.stats.assists) / targetSummoner.stats.deaths).toFixed(2) + ':1 평점';
+    const kdaRatio = targetSummoner.stats.deaths === 0 && (targetSummoner.stats.kills + targetSummoner.stats.assists) !== 0 ? "Perfect 평점" : ((targetSummoner.stats.kills + targetSummoner.stats.assists) / targetSummoner.stats.deaths).toFixed(2) + ':1 평점';
     const level = '레벨 ' + targetSummoner.stats.champLevel.toString();
     const creepScore = (targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled).toString() + ' (' + ((targetSummoner.stats.neutralMinionsKilled + targetSummoner.stats.totalMinionsKilled)/(matchDetail.gameDuration/60)).toFixed(1) + ') CS';
     const pkRate = '킬관여 ' + ((targetSummoner.stats.kills + targetSummoner.stats.assists) / (matchDetail.participants.filter(participant => participant.teamId === summonerTeamId).reduce((acc, cur) => acc + cur.stats.kills, 0)) * 100).toFixed(0) + '%';
@@ -195,6 +198,7 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
     return (
       <GameItem
         key={index}
+        timeStamp={timeStamp}
         gameType={gameType}
         gameResult={gameResult}
         gameLength={gameLength}
