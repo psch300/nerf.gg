@@ -122,3 +122,14 @@
   top: 2.5px;
   width: 1.3em;
 }
+
+@media (max-width: 768px) {
+  .GameItem {
+    width: 100%;
+  }
+
+  .Players {
+    display: none;
+  }
+
+}

@@ -22,3 +22,13 @@
 .queueType {
   font-size: smaller;
 }
+
+@media (max-width: 768px) {
+  .TierBox {
+    height: 80px;
+  }
+
+  .tierImage {
+    width: 80px;
+  }
+}

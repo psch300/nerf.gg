@@ -2,3 +2,9 @@
   width: 300px;
   margin-right: 8px;
 }
+
+@media (max-width: 768px) {
+  .SideContent {
+    width: 100%;
+  }
+}

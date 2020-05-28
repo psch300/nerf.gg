@@ -11,6 +11,12 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .nerfgg-menu {
+    padding-left: 0;
+  }
+}
+
 .Menu li {
   float: left;
 }

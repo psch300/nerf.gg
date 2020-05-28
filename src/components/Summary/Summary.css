@@ -9,6 +9,12 @@
   height: 100px;
 }
 
+@media (max-width: 768px) {
+  .Summary img {
+    margin-left: 1em;
+  }
+}
+
 .Summary .profile {
   font-size: large;
   font-weight: 700;
