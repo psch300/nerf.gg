@@ -113,9 +113,9 @@ const GameItemList = ({summonerAccountId, matchDetailList}) => {
       case 61: return "Orianna"; 
       case 114: return "Fiora"; 
       case 9: return "Fiddlesticks"; 
-      case 31: return "ChoGath"; 
+      case 31: return "Chogath"; 
       case 33: return "Rammus"; 
-      case 7: return "LeBlanc"; 
+      case 7: return "Leblanc"; 
       case 16: return "Soraka"; 
       case 26: return "Zilean"; 
       case 56: return "Nocturne"; 
