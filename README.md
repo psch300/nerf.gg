@@ -22,3 +22,22 @@ React.js의 기본을 익히고 컨테이너, 컴포넌트 구조를 이해해�
   - `src/components` : 프로젝트를 구성하는 컴포넌트들이 모두 위치해있음. `props`로 전달받은 값을 렌더링하고 CSS 스타일을 가지고 웹을 꾸며주는 역할을 함.
   - `src/server` : 서버 측에서 사용하는 코드들을 넣어둠. `axios`를 이용해 RIOT API를 통해 각 소환사들의 정보를 받아옴.
   - `src/shared` : 서버와 클라이언트에서 공용으로 사용되는 컴포넌트인 `App.js`가 위치함.
+
+## 실행 화면
+
+1. 데스크탑
+  - 메인
+    ![desktop_main](./public/images/desktop_main.png)
+
+  - 'hide on bush' 전적 검색
+    ![desktop_search1](./public/images/desktop_search1.png)
+
+  - 같은 매치에 있었던 다른 소환사 전적 검색
+    ![desktop_search2](./public/images/desktop_search2.png)
+
+2. 모바일
+  - 메인
+    ![mobile_main](./public/images/mobile_main.png)
+
+  - 'hide on bush' 전적 검색
+    ![mobile_search](./public/images/mobile_search.png)
