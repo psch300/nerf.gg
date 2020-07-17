@@ -46,7 +46,7 @@ React.js의 기본을 익히고 컨테이너, 컴포넌트 구조를 이해해�
 
 2. 모바일
   - 메인
-    ![mobile_main](./public/images/mobile_main.png | width=100)
+    <img src="./public/images/mobile_main.png" width="400">
 
   - 'hide on bush' 전적 검색
-    ![mobile_search](./public/images/mobile_search.png | width=100)
+    <img src="./public/images/mobile_search.png" width="400">
